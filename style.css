@@ -7,7 +7,7 @@ html, body {
 }
 
 body {
-    background: url("hero.jpg") no-repeat 50% 50%;
+    background: url(hero.jpg) no-repeat 50% 50%;
     background-size: cover;
 }
 
@@ -40,14 +40,14 @@ img {
     position: fixed;
     color: rgb(124, 124, 124);
     font-size: 12px;
-    font-family: Poppins;
     letter-spacing: 2px;
+    font-family: Poppins;
     right: 100px;
     line-height: 80px;
     z-index: 1;
 }
 
-.menu {
+.menu{
     position: fixed;
     color: #6adb9d;
     right: 2em;
@@ -71,7 +71,7 @@ img {
 .ml7 {
     position: relative;
     font-weight: 900;
-    font-size: 3.7;
+    font-size: 3.7em;
 }
 
 .ml7 .text-wrapper {
@@ -83,8 +83,8 @@ img {
     overflow: hidden;
 }
 
-.ml7 .letters {
-    transform-origin: 0% 100%;
+.ml7 .letter {
+    transform-origin: 0 100%;
     display: inline-block;
     line-height: 1em;
 }
@@ -95,10 +95,10 @@ h1 {
     font-weight: bolder !important;
     font-size: 46px !important;
     margin-bottom: 0px;
-    text-transform: uppercase;
+    text-transform: uppercase !important;
 }
 
-#tagline {
+#tagline  {
     width: 640px;
 }
 
@@ -131,14 +131,14 @@ button {
 }
 
 #two {
-    background: linear-gradient(135deg, rgb(106, 219, 157) 0%, rgb(23, 167, 88) 100%);
+    background: linear-gradient(135deg, rgb(106, 219, 157) 0%, rgb(23, 167, 88) 100%);;
 }
 
 .media {
     position: absolute;
     top: 38%;
     z-index: 1;
-    right: 6%;
+    right: 6%
 }
 
 .media ul {
@@ -167,17 +167,17 @@ button {
     z-index: 1;
     color: grey;
     font-size: 15px;
-    font-family: "Roboto";
+    right: 0;
+    font-family: Roboto;
     font-weight: 100;
     margin-right: 2em;
-    bottom: 40px;
-    right: 0%;
+    bottom: 40px;   
 }
 
 .loading-screen {
     position: absolute;
     width: 100%;
-    height: 0vh;
+    height: 100vh;
     background: #0a0a0a;
     z-index: 2;
 }
@@ -187,18 +187,42 @@ button {
     padding: 0%;
     top: 50%;
     left: 50%;
-    transform: translate(-50% -50%);
+    transform: translate(-50%, -50%);
     position: absolute;
     z-index: 2;
     width: 40%;
-    opacity: 0.7;
+    opacity: 0.7;    
 }
 
-.ringOne {
-    animation: rotateRing 2s linear infinite;
+.ringOne img {
+    animation: rotateFirstRing 2s linear infinite;
 }
 
-.ringTwo {
-    animation: rotateRing 8s linear infinite;
+.ringTwo img {
+    animation: rotateFirstRing 8s linear infinite;
+}
+
+@keyframes rotateFirstRing {
+    from {
+          transform: rotate(0deg);
+    }
+    to {
+          transform: rotate(360deg);
+    }
+}
+
+@media(max-width: 900px) {
+
+    .loading-screen {
+          display: none;
+    }
+    .ring img {
+          display: none;
+    }
+
+    .header p, button, .media, h1 {
+          display: none;
+    }
+
 }
 
